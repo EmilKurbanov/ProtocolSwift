@@ -28,7 +28,7 @@ class FirstVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        sec = SecondVC(delegate: self)
+        sec = SecondVC(delegate: self, choiseRepair: .unRepair)
         settingsConstreints()
         
     }

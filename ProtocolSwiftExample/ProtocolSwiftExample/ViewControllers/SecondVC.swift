@@ -6,13 +6,17 @@
 //
 
 import UIKit
-
+enum ChoiceRepair: String {
+    case repair = "Починили"
+    case unRepair = "Сломан"
+}
 class SecondVC: UIViewController {
- 
+    var choiseRepair: ChoiceRepair
     weak var delegate: TextDelegate!
 
-    init(delegate: TextDelegate!) {
+    init(delegate: TextDelegate!, choiseRepair: ChoiceRepair) {
         self.delegate = delegate
+        self.choiseRepair = choiseRepair
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -26,6 +30,6 @@ class SecondVC: UIViewController {
     }
 
     func textDest(){
-        self.delegate.textDestination(text: "Починил")
+        self.delegate.textDestination(text: choiseRepair.rawValue)
     }
 }
